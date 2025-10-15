@@ -26,6 +26,28 @@ Add the JitPack dependency (replace `<version>` with the release version):
 
 ---
 
+Credits
+-------
+
+* Original **Liquid Glass**: [Kyant0/AndroidLiquidGlass](https://github.com/Kyant0/AndroidLiquidGlass?utm_source=chatgpt.com)
+* Original **Capsule** library: [Kyant0/Capsule](https://github.com/Kyant0/Capsule?utm_source=chatgpt.com)
+
+> This library is a **wrapper** and does not copy the original source code. All credits go to the original author Kyant0.
+
+License
+-------
+
+This project is MIT licensed. For the original Liquid Glass library license, see [here](https://github.com/Kyant0/AndroidLiquidGlass/blob/main/LICENSE.md).
+
+
+---
+
+## Installation
+
+Add the JitPack dependency (replace `<version>` with the release version):
+
+---
+
 ```kotlin
 dependencies {
     implementation("com.arkeasytools.fromkyant:liquidglass:<version>")
@@ -53,15 +75,3 @@ fun MyUI() {
 
 '''
 
-Credits
--------
-
-* Original **Liquid Glass**: [Kyant0/AndroidLiquidGlass](https://github.com/Kyant0/AndroidLiquidGlass?utm_source=chatgpt.com)
-* Original **Capsule** library: [Kyant0/Capsule](https://github.com/Kyant0/Capsule?utm_source=chatgpt.com)
-
-> This library is a **wrapper** and does not copy the original source code. All credits go to the original author Kyant0.
-
-License
--------
-
-This project is MIT licensed. For the original Liquid Glass library license, see [here](https://github.com/Kyant0/AndroidLiquidGlass/blob/main/LICENSE.md).
