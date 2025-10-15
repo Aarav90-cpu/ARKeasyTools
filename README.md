@@ -20,12 +20,6 @@ This project **does not contain the original Kyant0 source** but wraps it for ea
 
 ---
 
-## Installation
-
-Add the JitPack dependency (replace `<version>` with the release version):
-
----
-
 Credits
 -------
 
@@ -39,7 +33,6 @@ License
 
 This project is MIT licensed. For the original Liquid Glass library license, see [here](https://github.com/Kyant0/AndroidLiquidGlass/blob/main/LICENSE.md).
 
-
 ---
 
 ## Installation
@@ -48,17 +41,11 @@ Add the JitPack dependency (replace `<version>` with the release version):
 
 ---
 
-```kotlin
-dependencies {
-    implementation("com.arkeasytools.fromkyant:liquidglass:<version>")
-}
-
-'''
-
 ## Usage
 
 
 '''kotlin
+
 import com.arkeasytools.fromkyant.liquidglass.liquidgl
 
 @Composable
@@ -74,4 +61,15 @@ fun MyUI() {
 }
 
 '''
+
+
+'''kotlin
+
+dependencies {
+    implementation("com.arkeasytools.fromkyant:liquidglass:<version>")
+}
+
+'''
+
+
 
