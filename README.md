@@ -39,7 +39,9 @@ This project is MIT licensed. For the original Liquid Glass library license, see
 
 Add the JitPack dependency (replace `<version>` with the release version):
 
-Still Remaining
+
+        implementation 'com.github.Aarav90-cpu:ARKeasyTools:Alpha-1.0.0'
+
 
 ---
 
@@ -61,4 +63,5 @@ Still Remaining
         }
 
 ## END ##
+
 
