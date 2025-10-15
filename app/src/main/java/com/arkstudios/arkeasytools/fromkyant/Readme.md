@@ -65,3 +65,4 @@ Add the JitPack dependency (replace `<version>` with the release version):
         }
 
 ## END ##
+T licensed. For the original Liquid Glass library license, see [here](https://github.com/Kyant0/AndroidLiquidGlass/blob/main/LICENSE.md).
