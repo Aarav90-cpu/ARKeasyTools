@@ -59,50 +59,52 @@ Add the JitPack dependency (replace `<version>` with the release version):
 
 ### Usage
 
+    class MainActivity : ComponentActivity() {
 
-           class MainActivity : ComponentActivity() {
+    class LiquidCatalogTestActivity : ComponentActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContent {
+                // Track UI states
+                var toggleState by remember { mutableStateOf(false) }
+                var sliderValue by remember { mutableStateOf(0.5f) }
+                var selectedTab by remember { mutableStateOf(0) }
+    
+                LiquidGL.catalog {
+                    // Button example
+                    button(onClick = { println("Button pressed!") }) {
+                        Text("Press Me", modifier = Modifier.padding(8.dp))
+                    }
 
-        private val layerBackdrop = LayerBackdrop().apply {
-            // Optional: add your custom onDraw here
-            onDraw { drawScope ->
-                drawScope.drawRect(
-                    color = Color(0x550000FF)
-                )
-            }
-        }
+                    // Slider example
+                    slider(
+                        value = sliderValue,
+                        onValueChange = { sliderValue = it },
+                        valueRange = 0f..1f
+                  )
 
-          override fun onCreate(savedInstanceState: Bundle?) {
-              super.onCreate(savedInstanceState)
-              setContent {
-              AppContent(layerBackdrop)
+                    // Toggle example
+                    toggle(selected = toggleState, onSelect = { toggleState = it })
+    
+                    // Bottom Tabs example
+                    bottomTabs(
+                        selectedIndex = selectedTab,
+                        onTabSelected = { selectedTab = it },
+                        tabsCount = 3
+                    ) {
+                        Row {
+                            Text("Tab 1", modifier = Modifier.padding(4.dp))
+                            Text("Tab 2", modifier = Modifier.padding(4.dp))
+                            Text("Tab 3", modifier = Modifier.padding(4.dp))
+                        }
+                    }
+                }
             }
         }
     }
-
-@Composable
-fun AppContent(backdrop: LayerBackdrop) {
-    Surface(
-        modifier = Modifier
-            .fillMaxSize()
-            .layerBackdrop(backdrop), // plug in your LayerBackdrop
-        color = Color.White
-    ) {
-        Column(
-            modifier = Modifier.fillMaxSize().padding(16.dp)
-        ) {
-            Text(text = "Yo bro, ARKEasyTools is live!", style = MaterialTheme.typography.headlineSmall)
-            Spacer(modifier = Modifier.height(16.dp))
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(200.dp)
-                    .background(Color.LightGray)
-            )
-        }
-    }
-}
-
+          
 ## END ##
+
 
 
 
