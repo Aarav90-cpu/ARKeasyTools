@@ -2,7 +2,7 @@
 
 ---
 
-# Easy liquidGL
+# 1> Easy liquidGL
 
 A Kotlin library for Jetpack Compose that provides a simple DSL wrapper around the amazing **[Android Liquid Glass](https://github.com/Kyant0/AndroidLiquidGlass)** and **Capsule** libraries.
 
@@ -39,20 +39,16 @@ This project is MIT licensed. For the original Liquid Glass library license, see
 
 Add the JitPack dependency (replace `<version>` with the release version):
 
-    '''kotlin
 
         dependencies {
         implementation("com.arkeasytools.fromkyant:liquidglass:<version>")
         }
 
-    '''
 
 ---
 
 ### Usage
 
-
-    '''kotlin
 
         import com.arkeasytools.fromkyant.liquidglass.liquidgl
     
@@ -68,10 +64,4 @@ Add the JitPack dependency (replace `<version>` with the release version):
             }
         }
 
-    '''
-
-
-
-
-
-
+## END ##
