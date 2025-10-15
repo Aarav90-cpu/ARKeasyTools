@@ -50,7 +50,9 @@ Make sure to put this in your 'build.gradle.kts (:app)' :
 Add the JitPack dependency (replace `<version>` with the release version):
 
 
-        implementation 'com.github.Aarav90-cpu:ARKeasyTools:Alpha-1.0.0'
+        implementation("com.github.Aarav90-cpu:ARKeasyTools:<version>")
+        implementation("com.github.Kyant0:AndroidLiquidGlass:<version>")
+        implementation("com.github.Kyant0:Capsule:<version>")
 
 
 ---
@@ -58,21 +60,50 @@ Add the JitPack dependency (replace `<version>` with the release version):
 ### Usage
 
 
-        import com.arkeasytools.fromkyant.liquidglass.liquidgl
-    
-        @Composable
-        fun MyUI() {
-            liquidgl {
-                liquidButton(size = 50) { 
-                    // handle button press
-                }
-                liquidSlider(0f..100f, 50f) { value ->
-                    // handle slider value change
-                }
+           class MainActivity : ComponentActivity() {
+
+        private val layerBackdrop = LayerBackdrop().apply {
+            // Optional: add your custom onDraw here
+            onDraw { drawScope ->
+                drawScope.drawRect(
+                    color = Color(0x550000FF)
+                )
             }
         }
 
+          override fun onCreate(savedInstanceState: Bundle?) {
+              super.onCreate(savedInstanceState)
+              setContent {
+              AppContent(layerBackdrop)
+            }
+        }
+    }
+
+@Composable
+fun AppContent(backdrop: LayerBackdrop) {
+    Surface(
+        modifier = Modifier
+            .fillMaxSize()
+            .layerBackdrop(backdrop), // plug in your LayerBackdrop
+        color = Color.White
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize().padding(16.dp)
+        ) {
+            Text(text = "Yo bro, ARKEasyTools is live!", style = MaterialTheme.typography.headlineSmall)
+            Spacer(modifier = Modifier.height(16.dp))
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(200.dp)
+                    .background(Color.LightGray)
+            )
+        }
+    }
+}
+
 ## END ##
+
 
 
 
