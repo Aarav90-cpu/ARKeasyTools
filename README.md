@@ -39,11 +39,7 @@ This project is MIT licensed. For the original Liquid Glass library license, see
 
 Add the JitPack dependency (replace `<version>` with the release version):
 
-
-        dependencies {
-        implementation("com.arkeasytools.fromkyant:liquidglass:<version>")
-        }
-
+Still Remaining
 
 ---
 
@@ -65,3 +61,4 @@ Add the JitPack dependency (replace `<version>` with the release version):
         }
 
 ## END ##
+
