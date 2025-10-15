@@ -37,6 +37,16 @@ This project is MIT licensed. For the original Liquid Glass library license, see
 
 ### Installation
 
+Make sure to put this in your 'build.gradle.kts (:app)' :
+
+                allprojects {
+            repositories {
+                google()
+                mavenCentral()
+                maven { url 'https://jitpack.io' }
+            }
+        }
+
 Add the JitPack dependency (replace `<version>` with the release version):
 
 
@@ -63,5 +73,6 @@ Add the JitPack dependency (replace `<version>` with the release version):
         }
 
 ## END ##
+
 
 
