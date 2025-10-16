@@ -38,23 +38,16 @@ This project is Apache licensed. For the original Liquid Glass library license, 
 
 ### Installation
 
-Make sure to put this in your 'build.gradle.kts (:app)' :
+Instead of creating a new project click `clone repository` in the Android Studio welcome page. Click on github.
+Sign-in if not done already with github account. In the clone from field type: `https://github.com/Aarav90-cpu/ARKeasyTools.git`
+Once the project gets cloned and opened go under the com. and create a new package and start coding your app. 
+
+``P.S. Make sure to point your Android.xml file to your MainActivity``
+
+Add the Following dependencies (replace `<version>` with the release version):
 
 ```kotlin
-                allprojects {
-            repositories {
-                google()
-                mavenCentral()
-                maven { url 'https://jitpack.io' }
-            }
-        }
-
-```
-
-Add the JitPack dependencies (replace `<version>` with the release version):
-
-```kotlin
-        implementation("com.github.Aarav90-cpu:ARKeasyTools:<version>")
+        
         implementation("com.github.Kyant0:AndroidLiquidGlass:<version>")
         implementation("com.github.Kyant0:Capsule:<version>")
 
@@ -115,6 +108,7 @@ fun MyLiquidScreen(backdrop: Backdrop) {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
