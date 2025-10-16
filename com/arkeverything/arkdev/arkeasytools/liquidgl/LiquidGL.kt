@@ -1,67 +1,72 @@
 package com.arkeverything.arkdev.arkeasytools.liquidgl
 
-import androidx.compose.foundation.layout.RowScope
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.BasicText
+import androidx.compose.material3.Text
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import com.kyant.backdrop.Backdrop
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import com.arkeverything.arkdev.arkeasytools.liquidgl.components.*
+import com.arkeverything.arkdev.arkeasytools.liquidgl.dummyBackdrop.DummyBackdrop
+import androidx.compose.foundation.layout.RowScope
+import com.arkeverything.arkdev.arkeasytools.liquidgl.assets.LiquidGLConfig
+import com.arkeverything.arkdev.arkeasytools.liquidgl.assets.LiquidBottomTabs
 
 object LiquidGL {
 
+    // --- GLOBAL CONFIGS ---
+    val config get() = LiquidGLConfig.get()
+    var tint by mutableStateOf(LiquidGLConfig.defaultTint)
+    var paddingDp by mutableStateOf(config.buttonPadding)
+    var buttonSize by mutableStateOf(config.buttonSize)
+
+    // --- BUTTON ---
     @Composable
-    fun Button(
-        backdrop: Backdrop,
-        config: LiquidButtonConfig = LiquidButtonConfig(),
+    fun Btn(
         modifier: Modifier = Modifier,
-        job: (() -> Unit)? = null,
-        onClick: (() -> Unit)? = null,
-        content: @Composable RowScope.() -> Unit
+        job: () -> Unit = {},
+        content: @Composable () -> Unit
     ) {
         LiquidButton(
-            backdrop = backdrop,
-            config = config,
+            backdrop = DummyBackdrop,
+            config = LiquidButtonConfig(),
             modifier = modifier,
-            job = {
-                onClick?.invoke()
-                job?.invoke()
-            },
-            content = content
-        )
+            job = job
+        ) { content() }
     }
 
+    // --- TOGGLE ---
     @Composable
-    fun Toggle(
-        backdrop: Backdrop,
+    fun Tgl(
         selected: () -> Boolean,
         onSelect: (Boolean) -> Unit,
-        modifier: Modifier = Modifier,
-        config: ToggleConfig = ToggleConfig(),
-        job: (() -> Unit)? = null
+        job: (() -> Unit)? = null,
+        modifier: Modifier = Modifier
     ) {
         LiquidToggle(
-            backdrop = backdrop,
+            backdrop = DummyBackdrop,
             selected = selected,
             onSelect = {
                 onSelect(it)
                 job?.invoke()
             },
             modifier = modifier,
-            config = config
+            config = ToggleConfig()
         )
     }
 
+    // --- SLIDER ---
     @Composable
-    fun Slider(
-        backdrop: Backdrop,
+    fun Sld(
         value: () -> Float,
         onValueChange: (Float) -> Unit,
         valueRange: ClosedFloatingPointRange<Float> = 0f..1f,
-        modifier: Modifier = Modifier,
-        config: LiquidSliderConfig = LiquidSliderConfig(),
-        job: ((Float) -> Unit)? = null
+        job: ((Float) -> Unit)? = null,
+        modifier: Modifier = Modifier
     ) {
         LiquidSlider(
-            backdrop = backdrop,
+            backdrop = DummyBackdrop,
             value = value,
             onValueChange = {
                 onValueChange(it)
@@ -69,42 +74,119 @@ object LiquidGL {
             },
             valueRange = valueRange,
             modifier = modifier,
-            config = config
+            config = LiquidSliderConfig()
         )
     }
 
+    // --- BOTTOM TABS ---
     @Composable
-    fun BottomTabs(
-        backdrop: Backdrop,
-        tabsCount: Int = 3,
+    fun Tabs(
+        count: Int,
+        selectedTabIndex: Int = 0,
+        onTabSelected: (Int) -> Unit = {},
         modifier: Modifier = Modifier,
-        config: LiquidTabsConfig = LiquidTabsConfig(),
-        job: ((Int) -> Unit)? = null,
-        content: @Composable RowScope.(Int) -> Unit
+        content: @Composable RowScope.(Int) -> Unit = { index -> Text("Tab $index") }
     ) {
         LiquidBottomTabs(
-            backdrop = backdrop,
-            tabsCount = tabsCount,
+            tabsCount = count,
+            selectedTabIndex = { selectedTabIndex },
+            onTabSelected = onTabSelected,
             modifier = modifier,
-            config = config,
-            job = job,
-            content = content
+            backdrop = DummyBackdrop,
+            content = content as @Composable (RowScope.() -> Unit)
         )
     }
 
+    // --- MENU ---
     @Composable
     fun Menu(
-        backdrop: Backdrop,
         options: List<LiquidMenuOption>,
         modifier: Modifier = Modifier,
-        config: LiquidMenuConfig = LiquidMenuConfig()
+        initiallyExpanded: Boolean = false,
+        onOpenChanged: ((Boolean) -> Unit)? = null
     ) {
         LiquidMenu(
-            backdrop = backdrop,
             options = options,
+            backdrop = DummyBackdrop,
             modifier = modifier,
-            config = config
+            config = LiquidMenuConfig(
+                circleSize = 56.dp,
+                optionHeight = 44.dp,
+                optionSpacing = 6.dp,
+                baseWidth = 140.dp,
+                extraWidthPerOption = 8.dp,
+                blurDp = 8.dp,
+                lensXDp = 12.dp,
+                lensYDp = 12.dp,
+                backgroundTint = Color.White.copy(alpha = 0.06f)
+            ),
+            initiallyExpanded = initiallyExpanded,
+            onOpenChanged = onOpenChanged
         )
     }
-}
 
+    // --- MODAL ---
+    @Composable
+    fun Modal(
+        show: Boolean,
+        onDismiss: () -> Unit,
+        content: @Composable () -> Unit
+    ) {
+        if (show) Box(Modifier.fillMaxSize().padding(paddingDp)) { content() }
+    }
+
+    // --- TOAST ---
+    @Composable
+    fun Toast(
+        msg: String,
+        durationMs: Long = 2000
+    ) {
+        BasicText(msg)
+    }
+
+    // --- FULL GOD MODE SCREEN ---
+    @Composable
+    fun FullScreen(
+        tabsCount: Int = 5,
+        selectedTab: Int = 0,
+        onTabSelected: (Int) -> Unit = {},
+        sliderValue: MutableState<Float> = mutableFloatStateOf(0f),
+        toggleValue: MutableState<Boolean> = mutableStateOf(false),
+        showButton: Boolean = true,
+        menuOptions: List<LiquidMenuOption> = emptyList(),
+        showMenu: Boolean = false,
+        showModal: Boolean = false,
+        modalContent: @Composable () -> Unit = {}
+    ) {
+        Column(Modifier.fillMaxSize().padding(paddingDp)) {
+
+            Tabs(
+                count = tabsCount,
+                selectedTabIndex = selectedTab,
+                onTabSelected = onTabSelected
+            )
+
+            Spacer(Modifier.height(16.dp))
+
+            Sld(value = { sliderValue.value }, onValueChange = { sliderValue.value = it })
+
+            Spacer(Modifier.height(16.dp))
+
+            Tgl(selected = { toggleValue.value }, onSelect = { toggleValue.value = it })
+
+            Spacer(Modifier.height(16.dp))
+
+            if (showButton) {
+                Btn(job = { /* do something */ }) { Text("Button") }
+            }
+
+            Spacer(Modifier.height(16.dp))
+
+            if (showMenu) {
+                Menu(options = menuOptions)
+            }
+
+            Modal(show = showModal, onDismiss = {}) { modalContent() }
+        }
+    }
+}
