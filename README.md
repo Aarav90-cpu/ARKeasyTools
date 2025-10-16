@@ -27,8 +27,8 @@ Why? Cause Before I add a new file or feature I will create a new release so tha
 ### Credits
 -------
 
-* Original **Liquid Glass**: [Kyant0/AndroidLiquidGlass](https://github.com/Kyant0/AndroidLiquidGlass?utm_source=chatgpt.com)
-* Original **Capsule** library: [Kyant0/Capsule](https://github.com/Kyant0/Capsule?utm_source=chatgpt.com)
+* Original **Liquid Glass**: **[Kyant0/AndroidLiquidGlass](https://github.com/Kyant0/AndroidLiquidGlass?utm_source=chatgpt.com)**
+* Original **Capsule** library: **[Kyant0/Capsule](https://github.com/Kyant0/Capsule?utm_source=chatgpt.com)**
 
 > This library is a **wrapper** and does not copy the original source code. All credits go to the original author Kyant0.
 
@@ -36,8 +36,8 @@ Why? Cause Before I add a new file or feature I will create a new release so tha
 -------
 
 This project is Apache licensed. 
-For the original Liquid Glass library license, see [here]([https://github.com/Kyant0/AndroidLiquidGlass?tab=Apache-2.0-1-ov-file]).
-For the original Capsule library license, see [here]([https://github.com/Kyant0/Capsule?tab=Apache-2.0-1-ov-file])
+For the original Liquid Glass library license, see **[here](https://github.com/Kyant0/AndroidLiquidGlass?tab=Apache-2.0-1-ov-file)**.
+For the original Capsule library license, see **[here](https://github.com/Kyant0/Capsule?tab=Apache-2.0-1-ov-file)**.
 
 ---
 
@@ -178,6 +178,7 @@ class MainActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
