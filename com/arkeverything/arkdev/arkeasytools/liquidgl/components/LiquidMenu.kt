@@ -47,7 +47,9 @@ data class MenuConfig(
 
 data class LiquidMenuOption(
     val label: String,
-    val job: (() -> Unit)? = null
+    val job: (suspend () -> Unit)? = null,
+    val content: (@Composable (() -> Unit))? = null,
+    val tintColor: Color? = null //
 )
 
 data class LiquidMenuConfig(
