@@ -41,7 +41,7 @@ This project is Apache licensed. For the original Liquid Glass library license, 
 
 ### Installation
 
-Create a new project and move the two folders under the com directory which were downloaded form this repository under the com directory of your project:
+Create a new project and move the two folders under the com directory which were downloaded form this repository under the com directory of your project. Also exchange the res folder in your project with the res folder provided:
 
 ```
 
@@ -50,6 +50,33 @@ com
 |--kyant
 
 ```
+
+Make the following changes to your AndroidMnifest.xml
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+```
+
 Make sure to add the following to your ``settings.gradle.kts``
 
 ```gradle
@@ -147,6 +174,7 @@ class MainActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
