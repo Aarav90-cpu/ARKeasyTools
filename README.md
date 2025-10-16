@@ -98,8 +98,8 @@ Add the Following dependencies (replace `<version>` with the release version):
 
 ```gradle
         
-        implementation("com.github.Kyant0:AndroidLiquidGlass:<version>")
-        implementation("com.github.Kyant0:Capsule:<version>")
+        implementation("com.github.Kyant0:AndroidLiquidGlass:1.0.0-beta02")
+        implementation("com.github.Kyant0:Capsule:2.1.0")
 
 ```
 ---
@@ -176,6 +176,7 @@ class MainActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
