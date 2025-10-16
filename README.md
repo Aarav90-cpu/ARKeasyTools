@@ -38,11 +38,15 @@ This project is Apache licensed. For the original Liquid Glass library license, 
 
 ### Installation
 
-Instead of creating a new project click `clone repository` in the Android Studio welcome page. Click on github.
-Sign-in if not done already with github account. In the clone from field type: `https://github.com/Aarav90-cpu/ARKeasyTools.git`
-Once the project gets cloned and opened go under the com. and create a new package and start coding your app. 
+Create a new project and move the two folders under the com directory which were downloaded form this repository under the com directory of your project:
 
-``P.S. Make sure to point your Android.xml file to your MainActivity``
+```
+
+com
+|--arkeverything
+|--kyant
+
+```
 
 Add the Following dependencies (replace `<version>` with the release version):
 
@@ -108,6 +112,7 @@ fun MyLiquidScreen(backdrop: Backdrop) {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
