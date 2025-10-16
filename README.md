@@ -9,7 +9,7 @@ A Kotlin library for Jetpack Compose that provides a simple DSL wrapper around t
 This project **does not contain the original Kyant0 source** but wraps it for easier integration in launcher and app projects.
 
 ``P.S. Only update at releases tagged Main do not upadate at Alpha or Small Releases as they come  more often. This point is just for saving your sanity. Also if any small or alpha release breaks it will be removed.
-Why? Cause Before I add a new file or feature I will create a new release so that if someone wants to tweak that themselves they can do that.``
+Why? Cause Before I add a new file or feature I will create a new release so that if someone wants to tweak that themselves they can do that. ``
 
 ---
 
@@ -40,6 +40,8 @@ This project is Apache licensed. For the original Liquid Glass library license, 
 ---
 
 ### Installation
+
+``P.S. If you really need a low based project use Alpha before stable as they are the best for rigit and hardcoding developers who love to get stuck in tiny problems. If you are a begeinner wait for stable to role out``
 
 Create a new project and move the two folders under the com directory which were downloaded form this repository under the com directory of your project. Also exchange the res folder in your project with the res folder provided:
 
@@ -174,6 +176,7 @@ class MainActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
