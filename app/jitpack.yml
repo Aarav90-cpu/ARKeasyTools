@@ -1,9 +1,0 @@
-jdk:
-  - openjdk17
-
-android:
-  module: arkeasytools # <- name of your library module folder
-  build:
-    tasks:
-      - clean
-      - assembleRelease

@@ -20,6 +20,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ARKEasyTools"
+rootProject.name = "ARKeasyTools"
 include(":app")
- 
+include(":app:test")

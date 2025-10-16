@@ -1,26 +1,23 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.arkeverything.arkdev.arkeasytools"
+    namespace = "com.arkeverything.arkdev.liquidgl.test.app.test"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.arkeverything.arkdev.arkeasytools"
+        applicationId = "com.arkeverything.arkdev.liquidgl.test.app.test"
         minSdk = 33
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildFeatures {
-        compose = true
     }
 
     buildTypes {
@@ -39,35 +36,27 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    publishing {
-        singleVariant("Alpha-2.0.0") {
-            withSourcesJar()
-        }
-    }
-    testFixtures {
-        enable = true
+    buildFeatures {
+        compose = true
     }
 }
 
 dependencies {
-    implementation(libs.androidx.foundation.layout)
-    implementation(libs.androidx.foundation)
-    val composeBom = platform("androidx.compose:compose-bom:2024.10.00")
-    implementation(composeBom)
-    androidTestImplementation(composeBom)
-
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.ui)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.material3.window.size.class1)
-    implementation(libs.androidx.material3.adaptive.navigation.suite)
     implementation("com.github.Kyant0:AndroidLiquidGlass:1.0.0-beta02")
     implementation("com.github.Kyant0:Capsule:2.1.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
