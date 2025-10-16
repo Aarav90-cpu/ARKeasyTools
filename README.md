@@ -8,6 +8,9 @@ A Kotlin library for Jetpack Compose that provides a simple DSL wrapper around t
 
 This project **does not contain the original Kyant0 source** but wraps it for easier integration in launcher and app projects.
 
+``P.S. Only update at releases tagged Main do not upadate at Alpha or Small Releases as they come  more often. This point is just for saving your sanity. Also if any small or alpha release breaks it will be removed.
+Why? Cause Before I add a new file or feature I will create a new release so that if someone wants to tweak that themselves they can do that.``
+
 ---
 
 ### Features
@@ -83,6 +86,7 @@ Tests are being conducted...
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
