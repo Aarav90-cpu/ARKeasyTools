@@ -35,7 +35,9 @@ Why? Cause Before I add a new file or feature I will create a new release so tha
 ### License
 -------
 
-This project is Apache licensed. For the original Liquid Glass library license, see [here](https://github.com/Kyant0/AndroidLiquidGlass/blob/main/LICENSE.md).
+This project is Apache licensed. 
+For the original Liquid Glass library license, see [here]([https://github.com/Kyant0/AndroidLiquidGlass?tab=Apache-2.0-1-ov-file]).
+For the original Capsule library license, see [here]([https://github.com/Kyant0/Capsule?tab=Apache-2.0-1-ov-file])
 
 ---
 
@@ -176,6 +178,7 @@ class MainActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
