@@ -47,10 +47,24 @@ com
 |--kyant
 
 ```
+Make sure to add the following to your ``settings.gradle.kts``
+
+```gradle
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://jitpack.io")
+    }
+}
+
+```
 
 Add the Following dependencies (replace `<version>` with the release version):
 
-```kotlin
+```gradle
         
         implementation("com.github.Kyant0:AndroidLiquidGlass:<version>")
         implementation("com.github.Kyant0:Capsule:<version>")
@@ -112,6 +126,7 @@ fun MyLiquidScreen(backdrop: Backdrop) {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
