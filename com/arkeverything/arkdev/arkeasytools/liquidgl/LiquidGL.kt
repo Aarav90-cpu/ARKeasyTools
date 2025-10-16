@@ -9,7 +9,7 @@ import com.arkeverything.arkdev.arkeasytools.liquidgl.components.*
 object LiquidGL {
 
     @Composable
-    fun LiquidButtonConfig(
+    fun Button(
         backdrop: Backdrop,
         config: LiquidButtonConfig = LiquidButtonConfig(),
         modifier: Modifier = Modifier,
@@ -30,7 +30,7 @@ object LiquidGL {
     }
 
     @Composable
-    fun ToogleConfig(
+    fun Toggle(
         backdrop: Backdrop,
         selected: () -> Boolean,
         onSelect: (Boolean) -> Unit,
@@ -51,7 +51,7 @@ object LiquidGL {
     }
 
     @Composable
-    fun LiquidSlider(
+    fun Slider(
         backdrop: Backdrop,
         value: () -> Float,
         onValueChange: (Float) -> Unit,
@@ -74,7 +74,7 @@ object LiquidGL {
     }
 
     @Composable
-    fun LiquidTabsConfig(
+    fun BottomTabs(
         backdrop: Backdrop,
         tabsCount: Int = 3,
         modifier: Modifier = Modifier,
@@ -82,7 +82,7 @@ object LiquidGL {
         job: ((Int) -> Unit)? = null,
         content: @Composable RowScope.(Int) -> Unit
     ) {
-        LiquidTabsConfig(
+        LiquidBottomTabs(
             backdrop = backdrop,
             tabsCount = tabsCount,
             modifier = modifier,
@@ -93,13 +93,13 @@ object LiquidGL {
     }
 
     @Composable
-    fun LiquidMenuConfig(
+    fun Menu(
         backdrop: Backdrop,
         options: List<LiquidMenuOption>,
         modifier: Modifier = Modifier,
         config: LiquidMenuConfig = LiquidMenuConfig()
     ) {
-        LiquidMenuConfig(
+        LiquidMenu(
             backdrop = backdrop,
             options = options,
             modifier = modifier,
@@ -107,3 +107,4 @@ object LiquidGL {
         )
     }
 }
+
