@@ -76,56 +76,14 @@ Add the Following dependencies (replace `<version>` with the release version):
 
 ```kotlin
 
-import com.arkeverything.arkdev.arkeasytools.liquidgl.LiquidGL
-import com.kyant.backdrop.Backdrop
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.graphics.Color
-
-@Composable
-fun MyLiquidScreen(backdrop: Backdrop) {
-    LiquidGL.Button(
-        backdrop = backdrop,
-        onClick = { println("Button pressed!") }
-    ) {
-        // RowScope content here
-    }
-
-    LiquidGL.Toggle(
-        backdrop = backdrop,
-        selected = { true },
-        onSelect = { selected -> println("Toggle is $selected") }
-    )
-
-    LiquidGL.Slider(
-        backdrop = backdrop,
-        value = { 0.5f },
-        onValueChange = { value -> println("Slider: $value") },
-        valueRange = 0f..1f
-    )
-
-    LiquidGL.BottomTabs(
-        backdrop = backdrop,
-        tabsCount = 3,
-        content = { index ->
-            println("Tab selected: $index")
-        }
-    )
-
-    LiquidGL.Menu(
-        backdrop = backdrop,
-        options = listOf(
-            LiquidMenuOption("Option 1") { println("Option 1 clicked") },
-            LiquidMenuOption("Option 2") { println("Option 2 clicked") }
-        )
-    )
-}
+Tests are being conducted...
 
 ```
 
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
