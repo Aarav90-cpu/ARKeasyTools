@@ -61,7 +61,7 @@ com
 
 Make the following changes to your AndroidMnifest.xml
 
-``This will prevent errors that come when you replace your res folder if you do nto put the following in your `AndroidManifest.xml` then be ready to face errors``
+``This will prevent errors that come when you replace your res folder if you do not put the following in your `AndroidManifest.xml` then be ready to face errors``
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -224,6 +224,7 @@ class LiquidTestActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
