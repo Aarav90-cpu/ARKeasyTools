@@ -45,7 +45,7 @@ For the original Capsule library license, see **[here](https://github.com/Kyant0
 
 ### Installation
 
-``P.S. If you really need a low based project use Alpha before stable as they are the best for rigit and hardcoding developers who love to get stuck in tiny problems. If you are a begeinner wait for stable to role out``
+``P.S. If you really need a low based project use Alpha before stable as they are the best for rigit and hardcoding developers who love to get stuck in tiny problems. If you are a begeinner wait for stable, stable-main or alpha-main to role out``
 
 Create a new project and move the two folders under the com directory which were downloaded form this repository which are ``arkeverything`` and ``kyant`` under the com directory of your project. Also exchange the res folder in your project with the res folder provided.
 
@@ -224,6 +224,7 @@ class LiquidTestActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
