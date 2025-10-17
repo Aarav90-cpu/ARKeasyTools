@@ -1,8 +1,8 @@
-# ARKeasyTools : Tools for easy Kotlin Coding
+# ARKeasyTools : Tools for easy Kotlin Coding (Alpha-Main)
 
 ---
 
-# 1> Easy liquidGL
+# 1> Easy liquidGL 
 
 A Kotlin library for Jetpack Compose that provides a simple DSL wrapper around the amazing **[Android Liquid Glass](https://github.com/Kyant0/AndroidLiquidGlass)** and **Capsule** libraries.
 
@@ -224,6 +224,7 @@ class LiquidTestActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
