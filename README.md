@@ -22,8 +22,7 @@ Test apps are also given at the root of file.
 - `liquidButton` – Liquid-style button with press animations.
 - `liquidSlider` – Smooth liquid glass slider.
 - `liquidToggle` – Toggle switch with liquid effect.
-- `liquidBottomTabs` – Bottom tabs with liquid glass effect. (In development)
-- `liquidMenu` - Menu with liquid glass effect. (In development)
+- `liquidBottomTabs` – Bottom tabs with liquid glass effect.
 - Fully composable DSL for easy, clean usage.
 
 ---
@@ -226,6 +225,7 @@ class LiquidTestActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
