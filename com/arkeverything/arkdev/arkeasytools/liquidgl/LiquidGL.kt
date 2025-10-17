@@ -12,6 +12,7 @@ import com.arkeverything.arkdev.arkeasytools.liquidgl.dummyBackdrop.DummyBackdro
 import androidx.compose.foundation.layout.RowScope
 import com.arkeverything.arkdev.arkeasytools.liquidgl.assets.LiquidGLConfig
 import com.arkeverything.arkdev.arkeasytools.liquidgl.assets.LiquidBottomTabs
+import android.R.attr.content
 
 object LiquidGL {
 
@@ -85,7 +86,7 @@ object LiquidGL {
         selectedTabIndex: Int = 0,
         onTabSelected: (Int) -> Unit = {},
         modifier: Modifier = Modifier,
-        content: @Composable RowScope.(Int) -> Unit = { index -> Text("Tab $index") }
+        content: @Composable RowScope.() -> Unit = { Text("Tab") }
     ) {
         LiquidBottomTabs(
             tabsCount = count,
@@ -93,9 +94,10 @@ object LiquidGL {
             onTabSelected = onTabSelected,
             modifier = modifier,
             backdrop = DummyBackdrop,
-            content = content as @Composable (RowScope.() -> Unit)
+            content = content
         )
     }
+
 
     // --- MENU ---
     @Composable
