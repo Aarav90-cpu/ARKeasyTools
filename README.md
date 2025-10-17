@@ -9,7 +9,7 @@ A Kotlin library for Jetpack Compose that provides a simple DSL wrapper around t
 This project **does not contain the original Kyant0 source** but wraps it for easier integration in launcher and app projects.
 
 ``P.S. Only update at releases tagged Main do not upadate at Alpha or Small Releases as they come  more often. This point is just for saving your sanity. Also if any small or alpha release breaks it will be removed.
-Why? Cause Before I add a new file or feature I will create a new release so that if someone wants to tweak that themselves they can do that. ``
+Why? Cause Before I add a new file or feature I will create a new release so that if someone wants to tweak that themselves they can do that. You can use Alpha-Main cause that just marks few months before Stable release. THis Repository wil be paused until 20 to #0 days starting from **17/10/25**``
 
 **This library makes coding esy for Kyant'0s AndroidLiquidGlass. But imports should be managed properly... This library was rebuilt for `Alpah-Main` to add new features**
 
@@ -226,6 +226,7 @@ class LiquidTestActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
