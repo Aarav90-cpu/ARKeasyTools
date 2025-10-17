@@ -11,6 +11,8 @@ This project **does not contain the original Kyant0 source** but wraps it for ea
 ``P.S. Only update at releases tagged Main do not upadate at Alpha or Small Releases as they come  more often. This point is just for saving your sanity. Also if any small or alpha release breaks it will be removed.
 Why? Cause Before I add a new file or feature I will create a new release so that if someone wants to tweak that themselves they can do that. ``
 
+**This library makes coding esy for Kyant'0s AndroidLiquidGlass. But imports should be managed properly... This library was rebuilt for `Alpah-Main` to add new features**
+
 Test apps are also given at the root of file.
 
 ---
@@ -118,11 +120,15 @@ Add the Following dependencies (replace `<version>` with the release version):
 
 ### Usage
 
+Always use Patches provided with the ARKeasyTools.
+Imports should be made for everything do not trust LiquidGL.kt to import everything you need.
+Some Backdrops are made by AI and can fail so please send fixes if any Bugs are spotted.
+There is a problem with `toBackdrop` in some files...
+
+---
 Here is some example code.
 
 ```kotlin
-
-package com.arkeverything.arkdev.test
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -130,54 +136,84 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.arkeverything.arkdev.arkeasytools.liquidgl.LiquidGL
+import com.arkeverything.arkdev.arkeasytools.LiquidGL.BackdropLayered
+import com.arkeverything.arkdev.arkeasytools.LiquidScope
+import com.arkeverything.arkdev.arkeasytools.patch.rememberDummyBackdrop
+import com.arkeverything.arkdev.arkeasytools.components.*
 
-class MainActivity : ComponentActivity() {
-
+class LiquidTestActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
 
-            // State holders
-            val sliderValue = remember { mutableFloatStateOf(0.5f) }
-            val toggleValue = remember { mutableStateOf(false) }
+            // remember a dummy backdrop for components
+            val dummyBackdrop = rememberDummyBackdrop()
 
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(24.dp)
+            // Full backdrop with layered effect
+            BackdropLayered(
+                modifier = Modifier.fillMaxSize(),
+                blurRadius = LiquidScope.liquidModifier.blurRadius,
+                tint = Color(0x88FFFFFF)
             ) {
 
-                // --- Slider controlling the tint ---
-                LiquidGL.Sld(
-                    value = { sliderValue.value },
-                    onValueChange = {
-                        sliderValue.value = it
-                        LiquidGL.tint = Color(
-                            red = it,
-                            green = 0.3f,
-                            blue = 1f - it
-                        ) // dynamic tint
-                    },
-                    job = { println("Slider moved: $it") }
-                )
-
-                // --- Toggle ---
-                LiquidGL.Tgl(
-                    selected = { toggleValue.value },
-                    onSelect = { toggleValue.value = it },
-                    job = { println("Toggle is now $toggleValue") }
-                )
-
-                // --- Button using current tint ---
-                LiquidGL.Btn(
-                    job = { println("Button pressed!") }
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(24.dp),
+                    verticalArrangement = Arrangement.SpaceEvenly,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = "Liquid Button")
+
+                    // --- Liquid Button ---
+                    // --- Liquid Button ---
+                    LiquidButton(
+                        onClick = { println("Button Pressed!") },
+                        backdrop = dummyBackdrop
+                    ) {
+                        Text("Press Me")
+                    }
+
+// --- Liquid Slider ---
+                    var sliderValue by remember { mutableFloatStateOf(0.5f) }
+                    LiquidSlider(
+                        value = { sliderValue },
+                        onValueChange = { sliderValue = it },
+                        valueRange = 0f..1f,
+                        backdrop = dummyBackdrop
+                    )
+                    // optional slider content
+
+
+// --- Liquid Toggle ---
+                    var toggleState by remember { mutableStateOf(false) }
+                    LiquidToggle(
+                        checked = toggleState,
+                        onCheckedChange = { toggleState = it },
+                        backdrop = dummyBackdrop
+                    )
+                    // optional toggle content
+
+
+
+
+// --- Liquid Bottom Tabs ---
+                    var selectedTab by remember { mutableIntStateOf(0) }
+                    LiquidBottomTabs(
+                        selectedTabIndex = { selectedTab },
+                        onTabSelected = { selectedTab = it },
+                        tabsCount = 3,
+                        backdrop = dummyBackdrop
+                    )
+                    // optional tab content
+                    {
+                        Text("Tab 1")
+                        Text("Tab 2")
+                        Text("Tab 3")
+                    }
                 }
             }
         }
@@ -190,6 +226,7 @@ class MainActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
