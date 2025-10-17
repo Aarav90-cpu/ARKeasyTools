@@ -11,6 +11,8 @@ This project **does not contain the original Kyant0 source** but wraps it for ea
 ``P.S. Only update at releases tagged Main do not upadate at Alpha or Small Releases as they come  more often. This point is just for saving your sanity. Also if any small or alpha release breaks it will be removed.
 Why? Cause Before I add a new file or feature I will create a new release so that if someone wants to tweak that themselves they can do that. ``
 
+Test apps are also given at the root of file.
+
 ---
 
 ### Features
@@ -18,8 +20,8 @@ Why? Cause Before I add a new file or feature I will create a new release so tha
 - `liquidButton` – Liquid-style button with press animations.
 - `liquidSlider` – Smooth liquid glass slider.
 - `liquidToggle` – Toggle switch with liquid effect.
-- `liquidBottomTabs` – Bottom tabs with liquid glass effect.
-- `liquidMenu` - Menu with liquid glass effect.
+- `liquidBottomTabs` – Bottom tabs with liquid glass effect. (In development)
+- `liquidMenu` - Menu with liquid glass effect. (In development)
 - Fully composable DSL for easy, clean usage.
 
 ---
@@ -27,15 +29,17 @@ Why? Cause Before I add a new file or feature I will create a new release so tha
 ### Credits
 -------
 
-* Original **Liquid Glass**: [Kyant0/AndroidLiquidGlass](https://github.com/Kyant0/AndroidLiquidGlass?utm_source=chatgpt.com)
-* Original **Capsule** library: [Kyant0/Capsule](https://github.com/Kyant0/Capsule?utm_source=chatgpt.com)
+* Original **Liquid Glass**: **[Kyant0/AndroidLiquidGlass](https://github.com/Kyant0/AndroidLiquidGlass?utm_source=chatgpt.com)**
+* Original **Capsule** library: **[Kyant0/Capsule](https://github.com/Kyant0/Capsule?utm_source=chatgpt.com)**
 
 > This library is a **wrapper** and does not copy the original source code. All credits go to the original author Kyant0.
 
 ### License
 -------
 
-This project is Apache licensed. For the original Liquid Glass library license, see [here](https://github.com/Kyant0/AndroidLiquidGlass/blob/main/LICENSE.md).
+This project is Apache licensed. 
+For the original Liquid Glass library license, see **[here](https://github.com/Kyant0/AndroidLiquidGlass?tab=Apache-2.0-1-ov-file)**.
+For the original Capsule library license, see **[here](https://github.com/Kyant0/Capsule?tab=Apache-2.0-1-ov-file)**.
 
 ---
 
@@ -43,7 +47,9 @@ This project is Apache licensed. For the original Liquid Glass library license, 
 
 ``P.S. If you really need a low based project use Alpha before stable as they are the best for rigit and hardcoding developers who love to get stuck in tiny problems. If you are a begeinner wait for stable to role out``
 
-Create a new project and move the two folders under the com directory which were downloaded form this repository under the com directory of your project. Also exchange the res folder in your project with the res folder provided:
+Create a new project and move the two folders under the com directory which were downloaded form this repository which are ``arkeverything`` and ``kyant`` under the com directory of your project. Also exchange the res folder in your project with the res folder provided.
+
+Once you have moved the two projects in You will see that under com two new directories have appeared.
 
 ```
 
@@ -54,6 +60,8 @@ com
 ```
 
 Make the following changes to your AndroidMnifest.xml
+
+``This will prevent errors that come when you replace your res folder if you do nto put the following in your `AndroidManifest.xml` then be ready to face errors``
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -81,6 +89,8 @@ Make the following changes to your AndroidMnifest.xml
 
 Make sure to add the following to your ``settings.gradle.kts``
 
+``You need to add this so that you can fetch from github (Not all repositories... there are some rules)``
+
 ```gradle
 
 dependencyResolutionManagement {
@@ -96,15 +106,19 @@ dependencyResolutionManagement {
 
 Add the Following dependencies (replace `<version>` with the release version):
 
+``I have told you to add the kyant folder under com so no need to do this but still. I insist``
+
 ```gradle
         
-        implementation("com.github.Kyant0:AndroidLiquidGlass:<version>")
-        implementation("com.github.Kyant0:Capsule:<version>")
+        implementation("com.github.Kyant0:AndroidLiquidGlass:1.0.0-beta02")
+        implementation("com.github.Kyant0:Capsule:2.1.0")
 
 ```
 ---
 
 ### Usage
+
+Here is some example code.
 
 ```kotlin
 
@@ -176,6 +190,10 @@ class MainActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
+
+
+
 
 
 
