@@ -43,7 +43,7 @@ import androidx.compose.ui.util.fastCoerceIn
 import androidx.compose.ui.util.fastRoundToInt
 import com.kyant.backdrop.BackdropEffectScope
 import com.kyant.backdrop.catalog.BackdropDemoScaffold
-import com.arkeverything.arkdev.test.R
+import com.arkeverything.arkdev.arkeasytools.R
 import com.kyant.backdrop.catalog.utils.ProgressConverter
 import com.kyant.backdrop.catalog.utils.rememberUISensor
 import com.kyant.backdrop.drawBackdrop

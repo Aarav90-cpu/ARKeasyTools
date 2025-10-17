@@ -23,7 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kyant.backdrop.catalog.BackdropDemoScaffold
-import com.arkeverything.arkdev.test.R
+import com.arkeverything.arkdev.arkeasytools.R
 import com.kyant.backdrop.catalog.utils.LoremIpsum
 import com.kyant.backdrop.drawBackdrop
 import com.kyant.backdrop.effects.blur
