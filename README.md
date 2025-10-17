@@ -104,7 +104,7 @@ dependencyResolutionManagement {
 
 ```
 
-Add the Following dependencies (replace `<version>` with the release version):
+Add the Following dependencies:
 
 ``I have told you to add the kyant folder under com so no need to do this but still. I insist``
 
@@ -224,6 +224,7 @@ class LiquidTestActivity : ComponentActivity() {
 ``P.S. Please make sure to give a .job handler. If object is test keep .job as null``
           
 ## END ##
+
 
 
 
